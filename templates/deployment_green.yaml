@@ -1,0 +1,28 @@
+{{ if .Values.green.enabled }}
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app: bulletin-board
+  name: {{ include "bulletin-board.fullname" . }}-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bulletin-board
+  template:
+    metadata:
+      labels:
+        app: bulletin-board
+        slot: green
+    spec:
+      containers:
+      - command:
+        - npm
+        - start
+        image: smartflow/bulletin-board:{{ .Values.image.tag }}
+        name: bulletin-board
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+{{ end }}

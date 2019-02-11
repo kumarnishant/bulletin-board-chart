@@ -1,0 +1,21 @@
+# Default values for bulletin-board.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  tag: 2
+
+green:
+  enabled: true
+
+blue:
+  enabled: true
+
+productionSlot: blue
+
+
+
+ingress:
+  enabled: true
