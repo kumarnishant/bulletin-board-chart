@@ -13,7 +13,7 @@ green:
 blue:
   enabled: true
 
-productionSlot: blue
+productionSlot: green
 
 
 
